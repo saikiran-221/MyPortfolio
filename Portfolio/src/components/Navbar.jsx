@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import IMG from '../assets/IMG.jpg'
 
 export function Navbar () {
   return (
     <>
       <div>
-        <img src="IMG.me.jpg" alt="user image" />
+        <img src={IMG} alt="user image" />
         <h1>Sai kiran</h1>
         <ul>
           <button>
