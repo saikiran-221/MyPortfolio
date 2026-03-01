@@ -1,0 +1,9 @@
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.projects-page h1 {
+  margin-bottom: 2rem;
+}

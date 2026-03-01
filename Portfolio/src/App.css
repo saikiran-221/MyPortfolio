@@ -2,25 +2,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-main);
-  /* Account for fixed headers and footers */
-  padding-top: 80px;
-  padding-bottom: 40px;
-  /* Reduced since footer is not fixed */
 }
 
 main {
   flex: 1;
-  max-width: 1024px;
-  margin: 0 auto;
-  width: 90%;
-  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Professional whitespace management */
-@media (max-width: 768px) {
-  #root {
-    padding-top: 70px;
-    padding-bottom: 140px;
-  }
+/* Ensure no stray margins at the very bottom */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }

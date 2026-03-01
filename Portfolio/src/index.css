@@ -1,21 +1,22 @@
 :root {
-  --primary-color: #1e3a8a;
-  /* Deep Navy */
-  --secondary-color: #3b82f6;
-  /* Professional Blue */
-  --bg-main: #f8fafc;
-  /* Very Light Slate */
-  --bg-white: #ffffff;
-  --text-dark: #0f172a;
-  /* Near Black */
+  --primary: #0f172a;
+  /* Slate 900 (Navy) */
+  --accent: #2563eb;
+  /* Blue 600 (Professional Blue) */
+  --accent-light: #eff6ff;
+  --text-main: #1e293b;
+  /* Slate 800 */
   --text-muted: #64748b;
-  /* Slate Gray */
-  --border-color: #e2e8f0;
-  /* Light Slate Border */
-  --glass-white: rgba(255, 255, 255, 0.95);
-  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --transition-standard: all 0.2s ease-in-out;
+  /* Slate 500 */
+  --bg-body: #f8fafc;
+  /* Slate 50 */
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  /* Slate 200 */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --radius: 8px;
+  --container-max: 1100px;
 }
 
 * {
@@ -25,18 +26,91 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-dark);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Professional Entry Animation */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding-top: 100px;
+  /* Increased for dynamic header */
+  /* Space for fixed navbar */
+}
+
+.page-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Common Components */
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-light);
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Shared Page Styles */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
 
   to {
@@ -46,11 +120,20 @@ body {
 }
 
 .animate-fade {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Selection color */
-::selection {
-  background: var(--secondary-color);
-  color: white;
+section h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 130px;
+    /* Space for stacked mobile navbar */
+  }
 }
