@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #1e3a8a;
+  /* Deep Navy */
+  --secondary-color: #3b82f6;
+  /* Professional Blue */
+  --bg-main: #f8fafc;
+  /* Very Light Slate */
+  --bg-white: #ffffff;
+  --text-dark: #0f172a;
+  /* Near Black */
+  --text-muted: #64748b;
+  /* Slate Gray */
+  --border-color: #e2e8f0;
+  /* Light Slate Border */
+  --glass-white: rgba(255, 255, 255, 0.95);
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --transition-standard: all 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Professional Entry Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Selection color */
+::selection {
+  background: var(--secondary-color);
+  color: white;
+}

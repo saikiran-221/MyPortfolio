@@ -1,18 +1,14 @@
 import './Footer.css';
 
-export function Footer () {
-
-  function resume(){
-    return(
-      <a href=""></a>
-    );
-  }
+export function Footer() {
   return (
-    <footer>
-      <p>© 2026 Sai Kiran. All rights reserved.</p>
-      <button onClick={resume}>
-        Resume
-      </button>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <p className="copyright-text">© 2026 Sai Kiran. All rights reserved.</p>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-button">
+          Resume
+        </a>
+      </div>
     </footer>
   );
 }
