@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
 import IMG from '../assets/IMG.jpg'
+import './Navbar.css'
 
-export function Navbar () {
+export function Navbar() {
   return (
     <>
-      <div>
-        <img src={IMG} alt="user image" />
-        <h1>Sai kiran</h1>
-        <ul>
+      <div className="navbar-container">
+        <div className="logo-section">
+          <img src={IMG} alt="user image" />
+          <h1>Sai kiran</h1>
+        </div>
+        <ul className="nav-links">
           <button>
             <Link to='/'>HOME</Link>
           </button>
